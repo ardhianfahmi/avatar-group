@@ -10,19 +10,14 @@ const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>(
     ({ color, name = '', BadgeProps, children, sx, ...other }, ref) => {
         const theme = useTheme();
 
-
-        const { color: colorByName, name: charAtName } = getColorByName(name);
+        const { color: colorByName } = getColorByName(name);
 
         const colr = color || colorByName;
-
-        const nama = name.slice(0, 1) && name.slice(2, 3);
-
-        console.log(nama, 'hehe');
 
         const renderContent =
             colr === 'default' ? (
                 <Avatar ref={ref} sx={sx} {...other}>
-                    {name && name.slice(0, 1) && name.slice(2, 3)}
+                    {name && (name[0] + name[2]).toUpperCase()}
                     {children}
                 </Avatar>
             ) : (
@@ -36,7 +31,7 @@ const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>(
                     }}
                     {...other}
                 >
-                    {name && name.slice(0, 1) && name.slice(2, 3)}
+                    {name && (name[0] + name[2]).toUpperCase()}
                     {children}
                 </Avatar>
             );
@@ -57,8 +52,8 @@ const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>(
 
 export default CustomAvatar;
 
-// ----------------------------------------------------------------------
 
+// Give color to avatar by name
 function getColorByName(name: string) {
     const character = (name: string) => name && name.charAt(0).toUpperCase();
 

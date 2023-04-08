@@ -50,19 +50,23 @@ const CustomAvatarGroup = forwardRef<HTMLDivElement, CustomAvatarGroupProps>(
                         ...(isLarge && {
                             width: SIZES.large,
                             height: SIZES.large,
+                            fontSize: '16px',
                             '&:first-of-type': { fontSize: 16 },
                         }),
                         ...(isMedium && {
                             width: SIZES.medium,
                             height: SIZES.medium,
+                            fontSize: '13px',
                         }),
                         ...(isSmall && {
                             width: SIZES.small,
                             height: SIZES.small,
+                            fontSize: '11px',
                         }),
                         ...(isTiny && {
                             width: SIZES.tiny,
                             height: SIZES.tiny,
+                            fontSize: '10px',
                         }),
                     },
                     ...(compact && { ...compactStyle }),

@@ -15,7 +15,7 @@ const Container: FC<ContainerProps> = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                backgroundColor: 'background.default',
+
                 color: 'text.primary',
                 flex: 1,
                 ...props?.sx,

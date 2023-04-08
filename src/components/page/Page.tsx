@@ -13,7 +13,7 @@ interface Props extends BoxProps {
     title: string;
 }
 const Page = forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ...other }, ref) => (
-    <Box className="main" sx={{ minHeight: 'calc(100vh - 110px)', height: '100%' }}>
+    <Box className="main" sx={{ minHeight: 'calc(100vh - 110px)', height: '100%', backgroundColor: '#f4f6f8', }}>
         <Helmet>
             <title>{title}</title>
             {meta}

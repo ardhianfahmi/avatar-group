@@ -1,45 +1,26 @@
-import { Tooltip } from "@mui/material";
-import CustomAvatarGroup from "../../components/custom-avatar/CustomAvatarGroup";
-import { CustomAvatar } from "../../components/custom-avatar";
-import _mock from '../../_mock';
+import { Box, Typography } from "@mui/material";
+import CustomAvatarImage from "./CustomAvatarImage";
+import CustomAvatarInitial from "./CustomAvatarInitial";
+import CustomAvatarMore from "./CustomAvatarMore";
+import CustomAvatarSize from "./CustomAvatarSize";
 
 
 function CustomAvatarSection() {
-
-    const SIZES = ['tiny', 'small', 'medium', 'large'] as const;
-
-    const USERS = ['Tomi Budi', 'Tomi Budi', 'Tomi Budi', 'Tomi Budi', 'Tomi Budi', 'Tomi Budi', 'Tomi Budi', 'Tomi Budi'] as const;
-
     return (
-        <>
-            {SIZES.map((size) => (
-                <Tooltip key={size} title={size}>
-                    <CustomAvatarGroup key={size} size={size} max={4}>
-                        {USERS.map((user, index) => (
-                            <CustomAvatar
-                                key={user}
-                                alt="Tomi Budi"
-                                src={_mock.image.avatar(index + 1)}
-                            />
-                        ))}
-                    </CustomAvatarGroup>
-                </Tooltip>
-            ))}
-            {SIZES.map((size) => (
-                <Tooltip key={size} title={size}>
-                    <CustomAvatarGroup key={size} size={size} max={4}>
-                        {USERS.map((user, index) => (
-                            <CustomAvatar
-                                key={user}
-                                alt="Tomi Budi"
-                                src={''}
-                                name={user}
-                            />
-                        ))}
-                    </CustomAvatarGroup>
-                </Tooltip>
-            ))}
-        </>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            px: 2,
+            py: 3,
+            gap: 3,
+            textAlign: 'center'
+        }}>
+            <Typography variant="h2">Custom Avatar</Typography>
+            <CustomAvatarImage />
+            <CustomAvatarInitial />
+            <CustomAvatarMore />
+            <CustomAvatarSize />
+        </Box>
     );
 }
 
