@@ -3,7 +3,7 @@ import CustomAvatarSection from '../sections/custom-avatar';
 
 function CustomAvatarPage() {
     return (
-        <Page title='Landing Page'>
+        <Page title='Custom Avatar'>
             <CustomAvatarSection />
         </Page>
     );
